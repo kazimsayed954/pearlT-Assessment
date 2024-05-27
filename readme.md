@@ -25,7 +25,7 @@ The Notification Service is a Node.js application built with Express and Socket.
     ```bash
     git clone https://github.com/kazimsayed954/pearlT-Assessment.git
     cd pearlT-Assessment/client
-    npm insall 
+    npm install 
     npm run dev
     cd ..
 
