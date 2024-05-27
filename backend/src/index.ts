@@ -3,7 +3,9 @@ import cors from 'cors';
 import * as socketio from "socket.io";
 import http from 'http';
 import notificationRouter from './routes/notification.route';
+import { configDotenv } from 'dotenv';
 
+configDotenv();
 
 const ioCorsOptions = {
     cors: {

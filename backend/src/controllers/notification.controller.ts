@@ -5,10 +5,14 @@ import { addToQueue } from "../queues/email.queue";
 
 export const notification = async (req: Request, res: Response) => {
     try {
-        const notificationData = req.body;
-        io.emit('notification', notificationData);
+        const body= req.body;
+        const { email, message} = body;
+        io.emit('notification', {
+            email,
+            message
+        });
 
-        addToQueue(notificationData, req);
+        addToQueue(body, req);
         logger.info('Notification queued successfully');
         res.status(200).send('Notification queued successfully');
     } catch (error) {

@@ -16,7 +16,7 @@ useEffect(() => {
   // Listen for notification events from the server
   socket.on('notification', (data) => {
     console.log('data', data)
-    toast.info(`New Notification: ${data.message}`);
+    toast.info(`New Notification from ${data.email}: ${data.message}`);
   });
 
   // Cleanup on component unmount

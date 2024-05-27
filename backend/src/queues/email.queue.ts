@@ -1,4 +1,3 @@
-// src/queues/emailQueue.ts
 import nodemailer from 'nodemailer';
 import { Request } from 'express';
 import logger from '../logger';
