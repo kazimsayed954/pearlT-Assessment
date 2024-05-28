@@ -7,7 +7,8 @@ export const notification = async (req: Request, res: Response) => {
     try {
         const body= req.body;
         const { email, message} = body;
-        io.emit('notification', {
+        const unique = email?.split('@')[0];
+        io.emit(`notification:${unique}`, {
             email,
             message
         });

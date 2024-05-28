@@ -14,14 +14,13 @@ function App() {
   
 useEffect(() => {
   // Listen for notification events from the server
-  socket.on('notification', (data) => {
-    console.log('data', data)
+  socket.on('notification:18co47', (data) => {
     toast.info(`New Notification from ${data.email}: ${data.message}`);
   });
 
   // Cleanup on component unmount
   return () => {
-    socket.off('notification');
+    socket.off('notification:18co47');
   };
 }, []);
 

@@ -48,7 +48,7 @@ const addToQueue = (data: MailData, req: Request, attempts: number = 5) => {
 
 const sendMail = (data: MailData, req: Request): Promise<void> => {
   return new Promise((resolve, reject) => {
-    const { email } = data;
+    const { email,message } = data;
     let transporter = nodemailer.createTransport({
       service: "gmail",
       port: 587,
@@ -67,6 +67,7 @@ const sendMail = (data: MailData, req: Request): Promise<void> => {
       html: `
       <p>Hii,</p>
       <p>We are sending an Email </p>
+      <p>${message ?? ""}</p>
       `,
     };
 
